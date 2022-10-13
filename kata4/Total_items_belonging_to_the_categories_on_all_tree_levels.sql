@@ -1,22 +1,23 @@
-WITH RECURSIVE itemsCount AS (
+WITH RECURSIVE itemsCount  as  (
     SELECT 
-        c.id, t.category_id 
+        c.id as category , t.id as item
     FROM 
         categories c 
-    LEFT OUTER JOIN 
+    left OUTER JOIN 
         items t ON (c.id = t.category_id)
 
     UNION ALL
 
     SELECT 
-        c.parent , t.category_id 
+        ca.parent , t.id
     FROM 
-        categories ca 
-    JOIN 
-        categories c ON (ca.id = c.id) 
-    LEFT OUTER JOIN 
-        items t ON (c.id = t.category_id)
+        itemsCount ic 
+    left outer JOIN 
+        categories ca ON (ic.category = ca.parent) 
+     inner JOIN 
+        items t ON (ca.id  = t.category_id)
+
 )
-SELECT id, count(category_id)  FROM itemsCount 
-group by id
-order by id asc;
+SELECT category as id, count(item) as total FROM itemsCount
+group by category
+order by category asc;
