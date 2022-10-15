@@ -61,4 +61,7 @@
       5   |   1
       6   |   0
 
+
+[Total items belonging to the categories on all tree levels](https://www.codewars.com/kata/5da48818dcf4d6002129a751)
+
 ----------------------------------------------------------------------------------------------------------------

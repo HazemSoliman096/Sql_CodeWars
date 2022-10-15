@@ -25,4 +25,7 @@
       total_salary (float, 2 dp)
 
     NOTE: Your solution should use pure SQL. Ruby is used within the test cases to do the actual testing.  
+
+[SQL Bug Fixing: Fix the JOIN](https://www.codewars.com/kata/580fb94e12b34dd1c40001f0)
+
 ----------------------------------------------------------------------------------------------------------------
